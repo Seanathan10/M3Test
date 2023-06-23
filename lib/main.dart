@@ -5,6 +5,7 @@ import 'tabs/tab1.dart';
 import 'tabs/tab2.dart';
 import 'tabs/tab3.dart';
 import 'tabs/tab4.dart';
+import 'tabs/tab5.dart';
 
 void main() {
   runApp(const MyApp());
@@ -38,11 +39,11 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue.shade900),
         useMaterial3: true,
       ),
       home: DefaultTabController(
-        length: 4,
+        length: 5,
         child: Scaffold(
           appBar: AppBar(
             bottom: const TabBar(
@@ -50,7 +51,8 @@ class MyApp extends StatelessWidget {
                 Tab(icon: Icon(Icons.directions_car)),
                 Tab(icon: Icon(Icons.directions_transit)),
                 Tab(icon: Icon(Icons.directions_bike)),
-                Tab(icon: Icon(Icons.question_mark)),
+                Tab(icon: Icon(Icons.account_balance_wallet_rounded)),
+                Tab(icon: Icon(Icons.question_mark))
               ],
             ),
             title: const Text('Tabs Demo'),
@@ -61,6 +63,7 @@ class MyApp extends StatelessWidget {
               Tab2(),
               Tab3(),
               Tab4(),
+              Tab5()
             ],
           ),
         ),

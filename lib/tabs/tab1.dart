@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:m3test/haptics.dart';
+
 
 class Tab1 extends StatelessWidget {
   const Tab1({super.key});
@@ -69,9 +72,14 @@ class Tab1 extends StatelessWidget {
           const Center(child: Text("Primary tab")),
           Center(
             child: ElevatedButton(
+                onPressed: showDialogue,
+                child: const Text("Show dialogue box")),
+          ),
+          Center(
+            child: ElevatedButton(
                 onPressed: showDialogueCupertino,
-                child: const Text("Alert Dialogue")),
-          )
+                child: const Text("Show Cupertino dialogue box")),
+          ),
         ],
       ),
     );

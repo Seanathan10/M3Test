@@ -8,7 +8,7 @@ class Tab4 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text("Unused tab"),
+        title: const Text("Interesting tab icon"),
       ),
       body: const Column(
         children: [
