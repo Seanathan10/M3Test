@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:m3test/haptics.dart';
 
 
 class Tab1 extends StatelessWidget {
