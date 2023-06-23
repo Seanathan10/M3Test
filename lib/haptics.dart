@@ -38,8 +38,13 @@ class LightHaptic extends StatelessWidget {
       );
     }
 
+    void tryLightHaptic() {
+      HapticFeedback.lightImpact();
+    }
+
     return Center(
-      child: ElevatedButton(onPressed: testLightHaptic, child: const Text("Light Haptic")),
+      child: ElevatedButton(
+          onPressed: tryLightHaptic, child: const Text("Light Haptic")),
     );
   }
 }
@@ -80,9 +85,13 @@ class MediumHaptic extends StatelessWidget {
       );
     }
 
+    void tryMediumHaptic() {
+      HapticFeedback.mediumImpact();
+    }
 
     return Center(
-      child: ElevatedButton(onPressed: testMediumHaptic, child: const Text("Medium Haptic")),
+      child: ElevatedButton(
+          onPressed: tryMediumHaptic, child: const Text("Medium Haptic")),
     );
   }
 }
@@ -123,8 +132,13 @@ class HeavyHaptic extends StatelessWidget {
       );
     }
 
+    void tryHeavyImpact() {
+      HapticFeedback.heavyImpact();
+    }
+
     return Center(
-      child: ElevatedButton(onPressed: testHeavyHaptic, child: const Text("Heavy Haptic")),
+      child: ElevatedButton(
+          onPressed: tryHeavyImpact, child: const Text("Heavy Haptic")),
     );
   }
 }
@@ -165,8 +179,13 @@ class SelectionHaptic extends StatelessWidget {
       );
     }
 
+    void trySelectionHaptic() {
+      HapticFeedback.selectionClick();
+    }
+
     return Center(
-      child: ElevatedButton(onPressed: testSelectionHaptic, child: const Text("Selection Haptic")),
+      child: ElevatedButton(
+          onPressed: trySelectionHaptic, child: const Text("Selection Haptic")),
     );
   }
 }
@@ -207,8 +226,13 @@ class VibrateHaptic extends StatelessWidget {
       );
     }
 
+    void tryVibrationHaptic() {
+      HapticFeedback.vibrate();
+    }
+
     return Center(
-      child: ElevatedButton(onPressed: testVibrateHaptic, child: const Text("Vibration Haptic")),
+      child: ElevatedButton(
+          onPressed: tryVibrationHaptic, child: const Text("Vibration Haptic")),
     );
   }
 }
