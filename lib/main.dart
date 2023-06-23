@@ -22,26 +22,31 @@ class MyApp extends StatelessWidget {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
 
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Tabs Demo',
+
+/*
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a blue toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue.shade900),
+        brightness: Brightness.light,
         useMaterial3: true,
       ),
+*/
+      theme: ThemeData(
+        // ColorScheme.fromSwatch(
+        //   primarySwatch: Colors.blue,
+        //   accentColor: Colors.blueAccent,
+        //   brightness: Brightness.light,
+        // ),
+        primaryColor: Colors.blue.shade900,
+        useMaterial3: true,
+      ),
+
+      darkTheme: ThemeData.dark(
+        
+        useMaterial3: true,
+      ),
+      themeMode: ThemeMode.system,
+      debugShowCheckedModeBanner: false,
       home: DefaultTabController(
         length: 5,
         child: Scaffold(
@@ -58,13 +63,7 @@ class MyApp extends StatelessWidget {
             title: const Text('Tabs Demo'),
           ),
           body: const TabBarView(
-            children: [
-              Tab1(),
-              Tab2(),
-              Tab3(),
-              Tab4(),
-              Tab5()
-            ],
+            children: [Tab1(), Tab2(), Tab3(), Tab4(), Tab5()],
           ),
         ),
       ),
