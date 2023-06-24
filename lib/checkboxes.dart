@@ -19,7 +19,7 @@ class _ColourModeCheckboxState extends State<ColourModeCheckbox> {
         setState(() {
           isChecked = value!;
         });
-        HapticFeedback.vibrate();
+        HapticFeedback.selectionClick();
       },
     );
   }
