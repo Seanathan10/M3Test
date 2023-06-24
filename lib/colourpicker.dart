@@ -77,7 +77,7 @@ class _ColourPickerState extends State<ColourPicker> {
                     Navigator.of(context).pop();
                   },
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.lime),
-                  child: const Text("Light Green", style: TextStyle(color: Colors.black)),
+                  child: const Text("Lime", style: TextStyle(color: Colors.black)),
                 ),
                 ElevatedButton(
                   onPressed: () {
