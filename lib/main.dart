@@ -79,8 +79,8 @@ class MyApp extends StatelessWidget {
             ),
             title: const Text('Tabs Demo'),
           ),
-          body: const TabBarView(
-            children: [Tab1(), Tab2(), Tab3(), Tab4(), Tab5()],
+          body: TabBarView(
+            children: [const Tab1(), const Tab2(), Tab3(), const Tab4(), const Tab5()],
           ),
         ),
       ),

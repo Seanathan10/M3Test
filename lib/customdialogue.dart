@@ -49,7 +49,7 @@ class _CustomDialogueState extends State<CustomDialogue> {
       onPressed: () {
         showCustomDialogue();
       },
-      child: Text("${widget.buttonText} Colour"),
+      child: Text( widget.buttonText ),
     );
   }
 }

@@ -1,39 +1,45 @@
 import 'package:flutter/material.dart';
 import 'package:m3test/colourpicker.dart';
 
-class Tab3 extends StatelessWidget {
-  const Tab3({super.key});
+class Tab3 extends StatefulWidget {
+  Tab3({super.key});
+
+  @override
+  State<Tab3> createState() => _Tab3State();
+}
+
+class _Tab3State extends State<Tab3> {
+  Color backgroundColor = Colors.white;
+  Color cardColor = Colors.white;
+
+  void handleBackgroundColourSelected(Color color) {
+    setState(() {
+      backgroundColor = color;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: backgroundColor,
       appBar: AppBar(
         centerTitle: true,
         title: const Text("Colour editing tab"),
       ),
-      body: const Column(
+      body: Column(
         children: [
-          Center(child: Icon(Icons.directions_bike)),
-          Center(child: Text("Tertiary tab")),
-          /*
-          Center(
-            child: DatePickerDialog(
-              initialDate: DateTime.now(),
-              firstDate: DateTime(2018),
-              lastDate: DateTime(2030),
-            ),
-          ),
-          */
+          const Center(child: Icon(Icons.directions_bike)),
+          const Center(child: Text("Tertiary tab")),
           Center(
             /*
               cardColor: Colors.blue.shade600,
               primarySwatch: Colors.red,
               accentColor: Colors.amberAccent,
-              backgroundColor: Colors.cyan,
               errorColor: Colors.indigo,
             */
             child: ColourPicker(
-              property: "testgeas",
+              property: "Background",
+              onColourSelected: handleBackgroundColourSelected,
             ),
           ),
         ],
@@ -41,3 +47,4 @@ class Tab3 extends StatelessWidget {
     );
   }
 }
+

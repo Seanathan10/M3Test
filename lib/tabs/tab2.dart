@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:m3test/customdialogue.dart';
 import 'package:m3test/checkboxes.dart';
 
 class Tab2 extends StatelessWidget {
@@ -19,7 +19,8 @@ class Tab2 extends StatelessWidget {
           Center(child: ColourModeCheckbox()),
           Center(child: ColourModeCheckbox()),
           Center(child: ColourModeCheckbox()),
-          Center(child: ColourModeCheckbox())
+          Center(child: ColourModeCheckbox()),
+          Center(child: CustomDialogue( buttonText: "Custom Dialogue Box" ))
         ],
       ),
     );
