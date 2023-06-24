@@ -28,12 +28,19 @@ class _ColourPickerState extends State<ColourPicker> {
               children: <Widget>[
                 ElevatedButton(
                   onPressed: () {
+                    widget.onColourSelected( Colors.transparent );
+                    Navigator.of(context).pop();
+                  },
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.transparent),
+                  child: const Text("Transparent"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
                     widget.onColourSelected( Colors.white );
                     Navigator.of(context).pop();
                   },
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
-                  // child: const Text("Red"),
-                  child: null,
+                  child: const Text("White", style: TextStyle(color: Colors.black)),
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -41,8 +48,7 @@ class _ColourPickerState extends State<ColourPicker> {
                     Navigator.of(context).pop();
                   },
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
-                  // child: const Text("Red"),
-                  child: null,
+                  child: const Text("Red", style: TextStyle(color: Colors.white)),
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -51,8 +57,7 @@ class _ColourPickerState extends State<ColourPicker> {
                   },
                   style:
                       ElevatedButton.styleFrom(backgroundColor: Colors.orange),
-                  // child: const Text("Orange"),
-                  child: null,
+                  child: const Text("Orange", style: TextStyle(color: Colors.black)),
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -61,8 +66,7 @@ class _ColourPickerState extends State<ColourPicker> {
                   },
                   style:
                       ElevatedButton.styleFrom(backgroundColor: Colors.yellow),
-                  // child: const Text("Yellow"),
-                  child: null,
+                  child: const Text("Yellow", style: TextStyle(color: Colors.black)),
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -70,8 +74,7 @@ class _ColourPickerState extends State<ColourPicker> {
                     Navigator.of(context).pop();
                   },
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.lime),
-                  // child: const Text("Light Green"),
-                  child: null,
+                  child: const Text("Light Green", style: TextStyle(color: Colors.black)),
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -80,8 +83,7 @@ class _ColourPickerState extends State<ColourPicker> {
                   },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.lightGreen),
-                  // child: const Text("Light Green"),
-                  child: null,
+                  child: const Text("Light Green", style: TextStyle(color: Colors.black)),
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -90,8 +92,7 @@ class _ColourPickerState extends State<ColourPicker> {
                   },
                   style:
                       ElevatedButton.styleFrom(backgroundColor: Colors.green),
-                  // child: const Text("Green"),
-                  child: null,
+                  child: const Text("Green", style: TextStyle(color: Colors.black)),
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -99,8 +100,7 @@ class _ColourPickerState extends State<ColourPicker> {
                     Navigator.of(context).pop();
                   },
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
-                  // child: const Text("Blue"),
-                  child: null,
+                  child: const Text("Blue", style: TextStyle(color: Colors.black)),
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -108,8 +108,7 @@ class _ColourPickerState extends State<ColourPicker> {
                     Navigator.of(context).pop();
                   },
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.cyan),
-                  // child: const Text("Cyan"),
-                  child: null,
+                  child: const Text("Cyan", style: TextStyle(color: Colors.black)),
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -118,8 +117,7 @@ class _ColourPickerState extends State<ColourPicker> {
                   },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blue.shade900),
-                  // child: const Text("Dark Blue"),
-                  child: null,
+                  child: const Text("Dark Blue", style: TextStyle(color: Colors.white)),
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -128,8 +126,7 @@ class _ColourPickerState extends State<ColourPicker> {
                   },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.deepPurple.shade600),
-                  // child: const Text("Dark Blue"),
-                  child: null,
+                  child: const Text("Dark Blue", style: TextStyle(color: Colors.white)),
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -138,8 +135,7 @@ class _ColourPickerState extends State<ColourPicker> {
                   },
                   style:
                       ElevatedButton.styleFrom(backgroundColor: Colors.brown),
-                  // child: const Text("Brown"),
-                  child: null,
+                  child: const Text("Brown", style: TextStyle(color: Colors.white)),
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -148,8 +144,7 @@ class _ColourPickerState extends State<ColourPicker> {
                   },
                   style:
                       ElevatedButton.styleFrom(backgroundColor: Colors.black),
-                  // child: const Text("Black"),
-                  child: null,
+                  child: const Text("Black", style: TextStyle(color: Colors.white)),
                 ),
               ],
             ),

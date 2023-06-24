@@ -9,8 +9,8 @@ class Tab3 extends StatefulWidget {
 }
 
 class _Tab3State extends State<Tab3> {
-  Color backgroundColor = Colors.white;
-  Color cardColor = Colors.white;
+  late Color backgroundColor = Colors.transparent;
+  late Color cardColor;
 
   void handleBackgroundColourSelected(Color color) {
     setState(() {
