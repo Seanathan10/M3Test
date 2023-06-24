@@ -26,31 +26,47 @@ class MyApp extends StatelessWidget {
 
 /*
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue.shade900),
         brightness: Brightness.light,
         useMaterial3: true,
       ),
 */
       theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue.shade900),
         // ColorScheme.fromSwatch(
         //   primarySwatch: Colors.blue,
         //   accentColor: Colors.blueAccent,
         //   brightness: Brightness.light,
         // ),
-        primaryColor: Colors.blue.shade900,
+        // primaryColor: Colors.blue.shade900,
+        /*
+        colorScheme: ColorScheme.fromSwatch(
+          cardColor: Colors.blue.shade600,
+          primarySwatch: Colors.red,
+          accentColor: Colors.amberAccent,
+          backgroundColor: Colors.cyan,
+          errorColor: Colors.indigo,
+          
+
+          brightness: Brightness.light,
+        ),
+      */
         useMaterial3: true,
       ),
 
       darkTheme: ThemeData.dark(
-        
+
         useMaterial3: true,
       ),
+
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
       home: DefaultTabController(
         length: 5,
         child: Scaffold(
           appBar: AppBar(
+            // backgroundColor: const Color.fromARGB(255, 61, 61, 61),
+            // shadowColor: Colors.green,
+            // surfaceTintColor: Colors.limeAccent,
             bottom: const TabBar(
               tabs: [
                 Tab(icon: Icon(Icons.directions_car)),
@@ -58,6 +74,7 @@ class MyApp extends StatelessWidget {
                 Tab(icon: Icon(Icons.directions_bike)),
                 Tab(icon: Icon(Icons.account_balance_wallet_rounded)),
                 Tab(icon: Icon(Icons.question_mark))
+                // Tab(icon: Icon(Icons.question_mark), text: "Help",)
               ],
             ),
             title: const Text('Tabs Demo'),
