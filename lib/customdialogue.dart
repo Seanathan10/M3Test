@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomDialogue extends StatefulWidget {
-    final String buttonText;
+  final String buttonText;
 
   const CustomDialogue({Key? key, required this.buttonText}) : super(key: key);
 

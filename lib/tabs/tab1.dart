@@ -2,13 +2,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Tab1 extends StatefulWidget {
-  const Tab1({super.key});
+  late Color backgroundColor = Colors.transparent;
+
+  Tab1({Key? key, required this.backgroundColor}) : super(key: key);
 
   @override
   State<Tab1> createState() => _Tab1State();
 }
 
 class _Tab1State extends State<Tab1> {
+  // late Color backgroundColor = Colors.transparent;
+
   @override
   Widget build(BuildContext context) {
     Future<void> showDialogue() async {
@@ -64,6 +68,7 @@ class _Tab1State extends State<Tab1> {
     }
 
     return Scaffold(
+      backgroundColor: widget.backgroundColor,
       appBar: AppBar(
         centerTitle: true,
         title: const Text("Car tab"),

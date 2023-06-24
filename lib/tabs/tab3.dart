@@ -2,26 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:m3test/colourpicker.dart';
 
 class Tab3 extends StatefulWidget {
-  Tab3({super.key});
+  Color backgroundColor = Colors.transparent;
+  final ValueChanged<Color> handleGlobalBackgroundColourChange;
+
+  Tab3({Key? key, required this.backgroundColor, required this.handleGlobalBackgroundColourChange}) : super(key: key);
 
   @override
   State<Tab3> createState() => _Tab3State();
 }
 
 class _Tab3State extends State<Tab3> {
-  late Color backgroundColor = Colors.transparent;
   late Color cardColor;
-
-  void handleBackgroundColourSelected(Color color) {
-    setState(() {
-      backgroundColor = color;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: widget.backgroundColor,
       appBar: AppBar(
         centerTitle: true,
         title: const Text("Colour editing tab"),
@@ -39,7 +35,7 @@ class _Tab3State extends State<Tab3> {
             */
             child: ColourPicker(
               property: "Background",
-              onColourSelected: handleBackgroundColourSelected,
+              onColourSelected: widget.handleGlobalBackgroundColourChange, 
             ),
           ),
         ],

@@ -11,8 +11,22 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  Color globalBackgroundColor = Colors.transparent;
+
+  void changeGlobalBackgroundColor(Color colour) {
+    setState(() {
+      globalBackgroundColor = colour;
+    });
+  }
+
 
   // This widget is the root of your application.
   @override
@@ -52,12 +66,9 @@ class MyApp extends StatelessWidget {
       */
         useMaterial3: true,
       ),
-
       darkTheme: ThemeData.dark(
-
         useMaterial3: true,
       ),
-
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
       home: DefaultTabController(
@@ -80,10 +91,28 @@ class MyApp extends StatelessWidget {
             title: const Text('Tabs Demo'),
           ),
           body: TabBarView(
-            children: [const Tab1(), const Tab2(), Tab3(), const Tab4(), const Tab5()],
+            children: [
+              Tab1(
+                backgroundColor: globalBackgroundColor,
+              ),
+              Tab2(
+                backgroundColor: globalBackgroundColor,
+              ),
+              Tab3(
+                backgroundColor: globalBackgroundColor,
+                handleGlobalBackgroundColourChange: changeGlobalBackgroundColor,
+              ),
+              Tab4(
+                backgroundColor: globalBackgroundColor,
+              ),
+              Tab5(
+                backgroundColor: globalBackgroundColor,
+              )
+            ],
           ),
         ),
       ),
     );
   }
 }
+
