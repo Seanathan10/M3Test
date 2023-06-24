@@ -19,10 +19,14 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
+class ShowGlobalSnackBar {
+
+}
+
 class _MyAppState extends State<MyApp> {
   Color globalBackgroundColor = Colors.transparent;
 
-  final scaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
+  static final scaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
 
   void changeGlobalBackgroundColor(Color colour) {
     setState(() {
@@ -43,12 +47,6 @@ class _MyAppState extends State<MyApp> {
       scaffoldMessengerKey: scaffoldMessengerKey,
       title: 'Tabs Demo',
 
-/*
-      theme: ThemeData(
-        brightness: Brightness.light,
-        useMaterial3: true,
-      ),
-*/
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue.shade900),
         // ColorScheme.fromSwatch(
@@ -113,6 +111,7 @@ class _MyAppState extends State<MyApp> {
             children: [
               Tab1(
                 backgroundColor: globalBackgroundColor,
+                scaffoldMessengerKey: scaffoldMessengerKey,
               ),
               Tab2(
                 backgroundColor: globalBackgroundColor,

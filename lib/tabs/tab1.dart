@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 
 class Tab1 extends StatefulWidget {
   late Color backgroundColor = Colors.transparent;
+  late GlobalKey<ScaffoldMessengerState> scaffoldMessengerKey;
 
-  Tab1({Key? key, required this.backgroundColor}) : super(key: key);
+  Tab1({Key? key, required this.backgroundColor, required this.scaffoldMessengerKey}) : super(key: key);
 
   @override
   State<Tab1> createState() => _Tab1State();
@@ -12,6 +13,7 @@ class Tab1 extends StatefulWidget {
 
 class _Tab1State extends State<Tab1> {
   // late Color backgroundColor = Colors.transparent;
+  GlobalKey<ScaffoldMessengerState> scaffoldKey = GlobalKey<ScaffoldMessengerState>();
 
   @override
   Widget build(BuildContext context) {
@@ -68,6 +70,18 @@ class _Tab1State extends State<Tab1> {
     }
 
     return Scaffold(
+      key: widget.scaffoldMessengerKey,
+      // floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // ScaffoldMessenger.of(context).showSnackBar( const SnackBar( content: Text("Floating action button pressed"), ), );
+          // widget.scaffoldMessengerKey.currentState?.showSnackBar(const SnackBar(content: Text("Tab 1 floating action button"), duration: Duration(milliseconds: 1250), backgroundColor: Color.fromARGB(255, 13, 71, 161), behavior: SnackBarBehavior.fixed,));
+          // scaffoldKey.showSnackBar( const SnackBar(content: Text("Hello")) ),
+          widget.scaffoldMessengerKey.currentState?.showSnackBar(const SnackBar(content: Text("Tab 1 floating action button"), duration: Duration(milliseconds: 1250), backgroundColor: Color.fromARGB(255, 13, 71, 161), behavior: SnackBarBehavior.fixed,));
+          // Scaffold.of(context).showSnackBar(const SnackBar(content: Text("Tab 1 floating action button"), duration: Duration(milliseconds: 1250), backgroundColor: Color.fromARGB(255, 13, 71, 161), behavior: SnackBarBehavior.fixed,));
+        },
+        child: const Icon(Icons.add),
+      ),
       backgroundColor: widget.backgroundColor,
       appBar: AppBar(
         centerTitle: true,
