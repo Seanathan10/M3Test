@@ -24,7 +24,7 @@ class _ColourPickerState extends State<ColourPicker> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          insetPadding: Platform.isIOS ? const EdgeInsets.fromLTRB( 0, 20, 0, 20 ) : const EdgeInsets.fromLTRB( 0, 10, 0, 5 ),
+          insetPadding: Platform.isIOS ? const EdgeInsets.fromLTRB( 0, 50, 0, 20 ) : const EdgeInsets.fromLTRB( 0, 10, 0, 5 ),
           title: Text("Select colour for ${widget.property}"),
           content: SingleChildScrollView(
             child: ListBody(
