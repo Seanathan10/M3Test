@@ -35,7 +35,7 @@ class _Tab3State extends State<Tab3> {
             */
             child: ColourPicker(
               property: "Background",
-              onColourSelected: widget.handleGlobalBackgroundColourChange, 
+              onColourSelected: widget.handleGlobalBackgroundColourChange,
             ),
           ),
         ],
