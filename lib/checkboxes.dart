@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'dart:io' show Platform;
+
 class ColourModeCheckbox extends StatefulWidget {
   const ColourModeCheckbox({Key? key}) : super(key: key);
 
@@ -19,7 +21,7 @@ class _ColourModeCheckboxState extends State<ColourModeCheckbox> {
         setState(() {
           isChecked = value!;
         });
-        HapticFeedback.selectionClick();
+        Platform.isIOS ? HapticFeedback.heavyImpact() : HapticFeedback.vibrate();
       },
     );
   }

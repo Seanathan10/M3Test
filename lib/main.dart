@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -21,12 +22,13 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   Color globalBackgroundColor = Colors.transparent;
 
+  final scaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
+
   void changeGlobalBackgroundColor(Color colour) {
     setState(() {
       globalBackgroundColor = colour;
     });
   }
-
 
   // This widget is the root of your application.
   @override
@@ -35,7 +37,10 @@ class _MyAppState extends State<MyApp> {
         systemNavigationBarColor: Colors.transparent));
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
 
+    // SystemChrome.setEnabledSystemUIMode( SystemUiMode.manual, overlays: [] );
+
     return MaterialApp(
+      scaffoldMessengerKey: scaffoldMessengerKey,
       title: 'Tabs Demo',
 
 /*
@@ -74,12 +79,26 @@ class _MyAppState extends State<MyApp> {
       home: DefaultTabController(
         length: 5,
         child: Scaffold(
+          floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
+          // floatingActionButtonLocation: FloatingActionButtonLocation.startDocked,
+          floatingActionButton: FloatingActionButton(
+              onPressed: () {
+                scaffoldMessengerKey.currentState?.showSnackBar(const SnackBar(content: Text("Global floating action button"), duration: Duration(milliseconds: 1250), backgroundColor: Color.fromARGB(255, 13, 71, 161)));
+              },
+              child: const Icon(Icons.announcement_sharp)
+              ),
           appBar: AppBar(
             // backgroundColor: const Color.fromARGB(255, 61, 61, 61),
             // shadowColor: Colors.green,
             // surfaceTintColor: Colors.limeAccent,
-            bottom: const TabBar(
-              tabs: [
+            bottom: TabBar(
+              onTap: (int unusedPlaceholder) {
+                HapticFeedback.heavyImpact();
+              },
+              enableFeedback: true, // this does nothing, created onTap instead
+              dragStartBehavior: DragStartBehavior.start,
+              // dragStartBehavior:,
+              tabs: const [
                 Tab(icon: Icon(Icons.directions_car)),
                 Tab(icon: Icon(Icons.directions_transit)),
                 Tab(icon: Icon(Icons.directions_bike)),
@@ -115,4 +134,3 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
-
