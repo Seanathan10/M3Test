@@ -3,9 +3,10 @@ import 'package:m3test/colourpicker.dart';
 
 class Tab3 extends StatefulWidget {
   Color backgroundColor = Colors.transparent;
+  Color appBarBackgroundColor = Colors.transparent;
   final ValueChanged<Color> handleGlobalBackgroundColourChange;
 
-  Tab3({Key? key, required this.backgroundColor, required this.handleGlobalBackgroundColourChange}) : super(key: key);
+  Tab3({Key? key, required this.backgroundColor, required this.handleGlobalBackgroundColourChange, required this.appBarBackgroundColor}) : super(key: key);
 
   @override
   State<Tab3> createState() => _Tab3State();
@@ -19,6 +20,7 @@ class _Tab3State extends State<Tab3> {
     return Scaffold(
       backgroundColor: widget.backgroundColor,
       appBar: AppBar(
+        backgroundColor: widget.appBarBackgroundColor,
         centerTitle: true,
         title: const Text("Colour editing tab"),
       ),

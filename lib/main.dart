@@ -26,7 +26,9 @@ class ShowGlobalSnackBar {
 class _MyAppState extends State<MyApp> {
   Color globalBackgroundColor = Colors.transparent;
 
-  static final scaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
+  // static final scaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
+
+  static final GlobalKey<ScaffoldMessengerState> rootScaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
 
   void changeGlobalBackgroundColor(Color colour) {
     setState(() {
@@ -44,7 +46,7 @@ class _MyAppState extends State<MyApp> {
     // SystemChrome.setEnabledSystemUIMode( SystemUiMode.manual, overlays: [] );
 
     return MaterialApp(
-      scaffoldMessengerKey: scaffoldMessengerKey,
+      scaffoldMessengerKey: rootScaffoldMessengerKey,
       title: 'Tabs Demo',
 
       theme: ThemeData(
@@ -81,7 +83,7 @@ class _MyAppState extends State<MyApp> {
           // floatingActionButtonLocation: FloatingActionButtonLocation.startDocked,
           floatingActionButton: FloatingActionButton(
               onPressed: () {
-                scaffoldMessengerKey.currentState?.showSnackBar(const SnackBar(content: Text("Global floating action button"), duration: Duration(milliseconds: 1250), backgroundColor: Color.fromARGB(255, 13, 71, 161)));
+                rootScaffoldMessengerKey.currentState?.showSnackBar(const SnackBar(content: Text("Global floating action button"), duration: Duration(milliseconds: 1250), backgroundColor: Color.fromARGB(255, 13, 71, 161)));
               },
               child: const Icon(Icons.announcement_sharp)
               ),
@@ -111,7 +113,7 @@ class _MyAppState extends State<MyApp> {
             children: [
               Tab1(
                 backgroundColor: globalBackgroundColor,
-                scaffoldMessengerKey: scaffoldMessengerKey,
+                // passedRootScaffoldMessengerKey: rootScaffoldMessengerKey,
               ),
               Tab2(
                 backgroundColor: globalBackgroundColor,
