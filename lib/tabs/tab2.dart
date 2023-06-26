@@ -4,8 +4,9 @@ import 'package:m3test/checkboxes.dart';
 
 class Tab2 extends StatefulWidget {
   late Color backgroundColor = Colors.transparent;
+  late Color appBarBackgroundColor;
 
-  Tab2({Key? key, required this.backgroundColor}) : super(key: key);
+  Tab2({Key? key, required this.backgroundColor, required this.appBarBackgroundColor}) : super(key: key);
 
   @override
   State<Tab2> createState() => _Tab2State();
@@ -17,6 +18,7 @@ class _Tab2State extends State<Tab2> {
     return Scaffold(
       backgroundColor: widget.backgroundColor,
       appBar: AppBar(
+        backgroundColor: widget.appBarBackgroundColor,
         centerTitle: true,
         title: const Text("Metro tab"),
       ),

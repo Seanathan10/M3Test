@@ -25,6 +25,7 @@ class ShowGlobalSnackBar {
 
 class _MyAppState extends State<MyApp> {
   Color globalBackgroundColor = Colors.transparent;
+  Color globalTabAppBarColor = Colors.transparent;
 
   // static final scaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
 
@@ -33,6 +34,12 @@ class _MyAppState extends State<MyApp> {
   void changeGlobalBackgroundColor(Color colour) {
     setState(() {
       globalBackgroundColor = colour;
+    });
+  }
+
+  void changeGlobalTabAppBarColor(Color colour) {
+    setState(() {
+      globalTabAppBarColor = colour;
     });
   }
 
@@ -113,20 +120,27 @@ class _MyAppState extends State<MyApp> {
             children: [
               Tab1(
                 backgroundColor: globalBackgroundColor,
+                appBarBackgroundColor: globalTabAppBarColor,
                 // passedRootScaffoldMessengerKey: rootScaffoldMessengerKey,
               ),
               Tab2(
                 backgroundColor: globalBackgroundColor,
+                appBarBackgroundColor: globalTabAppBarColor,
               ),
               Tab3(
                 backgroundColor: globalBackgroundColor,
                 handleGlobalBackgroundColourChange: changeGlobalBackgroundColor,
+                handleGlobalAppBarColourChange: changeGlobalTabAppBarColor,
+                // appBarBackgroundColor: Theme.of(context).appBarTheme.backgroundColor!,
+                appBarBackgroundColor: globalTabAppBarColor,
               ),
               Tab4(
                 backgroundColor: globalBackgroundColor,
+                appBarBackgroundColor: globalTabAppBarColor,
               ),
               Tab5(
                 backgroundColor: globalBackgroundColor,
+                appBarBackgroundColor: globalTabAppBarColor,
               )
             ],
           ),

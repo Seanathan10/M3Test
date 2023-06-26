@@ -3,10 +3,12 @@ import 'package:m3test/colourpicker.dart';
 
 class Tab3 extends StatefulWidget {
   Color backgroundColor = Colors.transparent;
-  Color appBarBackgroundColor = Colors.transparent;
+  late Color appBarBackgroundColor;
+  
   final ValueChanged<Color> handleGlobalBackgroundColourChange;
+  final ValueChanged<Color> handleGlobalAppBarColourChange;
 
-  Tab3({Key? key, required this.backgroundColor, required this.handleGlobalBackgroundColourChange, required this.appBarBackgroundColor}) : super(key: key);
+  Tab3({Key? key, required this.backgroundColor, required this.handleGlobalBackgroundColourChange, required this.appBarBackgroundColor, required this.handleGlobalAppBarColourChange}) : super(key: key);
 
   @override
   State<Tab3> createState() => _Tab3State();
@@ -40,6 +42,12 @@ class _Tab3State extends State<Tab3> {
               onColourSelected: widget.handleGlobalBackgroundColourChange,
             ),
           ),
+          Center(
+            child: ColourPicker(
+              property: "AppBar",
+              onColourSelected: widget.handleGlobalAppBarColourChange,
+            ),
+            ),
         ],
       ),
     );

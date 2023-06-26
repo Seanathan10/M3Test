@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 
 class Tab1 extends StatefulWidget {
   late Color backgroundColor = Colors.transparent;
+  late Color appBarBackgroundColor;
   late GlobalKey<ScaffoldMessengerState> passedRootScaffoldMessengerKey;
 
-  Tab1({Key? key, required this.backgroundColor, }) : super(key: key);
+  Tab1({Key? key, required this.backgroundColor, required this.appBarBackgroundColor }) : super(key: key);
   // Tab1({Key? key, required this.backgroundColor, required this.passedRootScaffoldMessengerKey}) : super(key: key);
 
   @override
@@ -95,6 +96,7 @@ class _Tab1State extends State<Tab1> {
       ),
       backgroundColor: widget.backgroundColor,
       appBar: AppBar(
+        backgroundColor: widget.appBarBackgroundColor,
         centerTitle: true,
         title: const Text("Car tab"),
       ),
